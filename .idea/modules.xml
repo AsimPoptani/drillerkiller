@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/drillerkiller.iml" filepath="$PROJECT_DIR$/drillerkiller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drillerkiller-grailsPlugins.iml" filepath="$PROJECT_DIR$/drillerkiller-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>
