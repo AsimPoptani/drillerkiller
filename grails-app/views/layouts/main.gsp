@@ -59,6 +59,8 @@
                 <li><a href="http://html5up.net/prologue" id="prologe-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Reference Site</span></a></li>
                 <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
                 <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                <li><a href="todo.gsp" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Todo</span></a></li>
+
             </ul>
         </nav>
 
