@@ -1,0 +1,763 @@
+<style type="text/css">
+   <!--
+
+   form {
+   /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+      font: 100% verdana, arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-width: 500px;
+      max-width: 600px;
+      width: 560px;
+   }
+
+   form fieldset {
+   /* clear: both; note that this clear causes inputs to break to left in ie5.x mac, commented out */
+      border-color: #330066;
+      border-width: 1px;
+      border-style: solid;
+      padding: 10px; /* padding in fieldset support spotty in IE */
+      margin: 0;
+      margin-bottom: 5px;
+   }
+
+   form fieldset legend {
+      font-size: 1.1em; /* bump up legend font size, not too large or it'll overwrite border on left */
+   /* be careful with padding, it'll shift the nice offset on top of border  */
+      color: #8A821A;
+      font-weight: bold;
+   }
+
+   form label {
+      display: block; /* block float the labels to left column, set a width */
+      float: left;
+      width: 250px;
+      padding: 0;
+      margin: 5px 0 0; /* set top margin same as form input - textarea etc. elements */
+      text-align: left;
+   }
+
+   .centeredlabel {
+      text-align: left;
+      font-weight: bold;
+   }
+
+   form input, form textarea, form select {
+   /* display: inline; inline display must not be set or will hide submit buttons in IE 5x mac */
+      width: auto; /* set width of form elements to auto-size, otherwise watch for wrap on resize */
+      margin: 5px 0 0 10px;
+      /* set margin on left of form elements rather than right of
+label aligns textarea better in IE */
+   }
+
+   form input#reset {
+      margin-left: 0px; /* set margin-left back to zero on reset button (set above) */
+   }
+
+   textarea {
+      overflow: auto;
+   }
+
+   form small {
+      display: block;
+      margin: 5px 0 5px 255px; /* instructions/comments left margin set to align w/ right column inputs */
+      padding: 1px 3px;
+      font-size: 68%;
+   }
+
+   form .required {
+      font-weight: bold;
+   }
+
+   /* uses class instead of div, more efficient */
+
+   form br {
+      clear: left; /* setting clear on inputs didn't work consistently, so brs added for degrade */
+   }
+
+   -->
+</style>
+
+<form action="thankyou.html">
+
+<h3> Medical History</h3>
+
+<p><em>Please fill this in only when asked to by the practice.
+   Medical History is treated as confidential. If you prefer, please complete
+   and print this form and bring it with you into the surgery.</em></p>
+
+<p><em> Treatment can be provided by the surgery if you complete the
+   Medical History form.</em></p>
+
+<p>
+   <em> If you would like further information
+      or advice please feel free to contact us.</em></p>
+<fieldset>
+   <legend>Patient's Details:</legend><br/>
+   <label for="Title">Title: </label>
+   <select size="1" id="title" name="Title">
+      <option value="MR" selected> Mr</option>
+      <option value=" MRS">Mrs </option>
+      <option value=" MISS">Miss</option>
+      <option value=" MSTR">Master</option>
+      <option value=" MS">Ms</option>
+   </select>
+   <br>
+
+   <label for="firstname"> Firstname :</label> <input type="text" id="firstname" name="emailformfirstname" tabindex="1"
+                                                      value="" title="firstname">
+   <br/>
+
+
+   <label for="surname"> Surname:</label> <input type="text" name="emailFormSurname" id=surname tabindex="1" value=""
+                                                 title="Surname">
+   <br/>
+
+
+   <label>Date of Birth:</label>
+   $cms.getDateSelect("/sites/base/dates/days.txt","dobdays")
+   $cms.getDateSelect("/sites/base/dates/months.txt","dobmonths")
+   $cms.getDateSelect("/sites/base/dates/years.txt","dobyears")
+   <br/>
+   <small> Date format<b>(dd/mm/yyyy)</b></small><br/>
+
+   <Label for="OccupationSchool">Occupation / School: </label>
+   <input type="text" id="OccupationSchool" name="OccupationSchool" tabindex="1" value="" title="OccupationSchool"><br/>
+
+
+   <Label for="Address">Address:</label> <input type="text" id="Address" name="Address" tabindex="1" value=""
+                                                title="Address"><br/>
+
+
+   <Label for="Postcode">Postcode:</label> <input type="text" id="Postcode" name="Postcode" tabindex="1" value=""
+                                                  title="Postcode"><br/>
+
+   <Label for="telephonenumber">Telephone number:</label> <input type="text" id="telephonenumber" name="telephonenumber"
+                                                                 tabindex="1" value="" title="Telephone number"><br/>
+
+   <label for="emailaddress">Email address:</label><input type="text" id="emailaddress" name="emailaddress" tabindex="1"
+                                                          value="" title="emailaddress"><br/>
+
+   <Label for="hospitalno">Hospital No(If Known):</label>
+      <input type="text" id="hospitalno" name="hospitalno" tabindex="1" value=""  title="HospitalNo"><br/>
+
+</fieldset>
+
+<fieldset>
+   <legend>Emergency Contact Details</legend><br/>
+   <label for=" nameofnextofkin">Name Of Next Of Kin :</label>
+      <input type="text" id="nameofnextofkin" name="nameofnextofkin" tabindex="1" value="" title="nameofnextofkin"><br/>
+
+   <Label for="relationship">Relationship:</label>
+      <input type="text" id="relationship" name="relationship" tabindex="1" value="" title="relationship"><br/>
+
+   <Label for="emergencyaddress">Address:</label>
+      <input type="text" id="emergencyaddress" name="emergencyaddress" tabindex="1" value="" title="emergencyaddress"><br/>
+
+      <Label for="emergencypostcode">Postcode:</label>
+         <input type="text" id="emergencypostcode" name="emergencypostcode" tabindex="1" value="" title="emergencypostcode"><br/>
+</fieldset>
+
+<fieldset>
+   <Legend>Parent/Guardian Details</legend>
+
+      <Label for="parentguardianname">Parent/Guardian Name:</label>
+         <input type="text" id="parentguardianname" name="parentguardianname" title="parentguardianname">
+      <br/>
+
+      <Label for="parentguardianaddress">Address:</label>
+         <input type="text" id="parentguardianaddress" name="parentguardianaddress" title="parentguardianaddress">
+      <br/>
+
+      <Label for="parentguardianpostcode">Postcode:</label>
+         <input type="text" id="parentguardianpostcode" name="parentguardianpostcode" title="parentguardianpostcode">
+      <br/>
+
+      <Label for="Daytime Telephone number:" >Daytime Telephone number:</label>
+         <input type="text" id="parentguardiandaytimetelephone" name="parentguardiandaytimetelephone" title="Daytime Telephone number">
+        <br/>
+</fieldset>
+<fieldset>
+
+   <legend>GP'S Details:</legend>
+
+   <Label for="gpname">GP's Name:</label>
+      <input type="text" id="gpname" name="gpname" tabindex="1"><br/>
+
+   <Label for="gptelephonenumber">GP's Telephone Number:</label>
+      <input type="text" id="gptelephonenumber" name="gptelephonenumber" tabindex="1" value="" title="GP'sTelephonenumber"><br/>
+
+
+   <Label for="gpaddress">GP's Address:</label>
+      <input type="text" id="gpaddress" name="gpaddress" tabindex="1" title="GP's Address"><br/>
+
+
+   <Label for="gppostcode">GP's Postcode:</label>
+      <input type="text" id="gppostcode" name="gppostcode" tabindex="1" value="" title="gppostcode"><br/>
+
+</fieldset>
+
+<fieldset>
+   <Legend>Your Health:</legend>
+
+   <label for="overallhealth">How would you describe your overall health?</label>
+   <select size="1" name="overallhealth" id="overallhealth">
+      <option value=Excellent selected>Excellent</option>
+      <option value="Good  ">Good </option>
+      <option value="Average">Average</option>
+      <option value=" Fair">Fair</option>
+      <option value="Poor">Poor</option>
+   </select>
+   <br/>
+
+   <Label>When was your last check up?</label>
+   $cms.getDateSelect("/sites/base/dates/days.txt","lastcheckupdays")
+   $cms.getDateSelect("/sites/base/dates/months.txt","lastcheckupmonths")
+   $cms.getDateSelect("/sites/base/dates/years.txt","lastcheckupyears")
+   <br/>
+
+   <small> Date format<b>(dd/mm/yyyy)</b></small><br/>
+
+   <Label>Have you been hospitalized in the last two years?</label>
+      Yes
+      <input type="radio" value="yes" name="hospitalizedinthelasttwoyears">
+      No
+      <input type="radio" value="no" name="hospitalizedinthelasttwoyears">
+  <br/><br/>
+
+   <label>Name of Hospital?</label>
+      <textarea name="nameofhospital" row=3 cols=23 wrap=off></textarea>
+ <br/><br/>
+
+   <label>If so Why?</label>
+      <textarea name="whyhospitalised" row=3 cols=23 wrap=off></textarea>
+<br/><br/>
+
+   <Label>Are you currently receiving treatment from a doctor,clinic or Specialist?</Label>
+      <textarea name="receivingtreatment" row=3 cols=23 wrap=off></textarea>
+<br/><br/>
+
+   <label>Any special requirements we should know about?</label>
+      <textarea name="specialrequirements" row=3 cols=23 wrap=off></textarea>
+<br/><br/>
+
+</fieldset>
+
+<fieldset>
+
+   <legend>Medications</legend>
+
+   <Label>Please list all medications or drugs prescribed you are taking</label>
+      <textarea name="listallmedications" row=3 cols=23 wrap=off></textarea><br/>
+   <small>
+      for example tablets,ointments,injections,inhalers,contraceptives and hormone replacement therapy
+   </small>
+<br/><br/>
+
+   <label>Please give any other details your dentist might need to know,such as self
+      prescribed medicines</label>
+      <textarea name="selfprescribedmedicines" row=3 cols=23 wrap=off></textarea><br/>
+      <small>for example Aspirin</small>
+<br/><br/>
+
+</fieldset>
+
+<fieldset>
+
+   <legend>Allergies: </legend><br/>
+   <Label>Have you ever had an adverse reaction or allergies to any
+      medication or substance? </label><br/>
+
+   <Label>Penicilin.</label>
+   Yes<input type="radio" value="yes" name="penicilin">
+   No<input type="radio" value="No" name="penicilin">
+   <br/>
+
+   <label>Aspirin.</label>
+   Yes<input type="radio" value="yes" name="aspirin">
+   No<input type="radio" value="No" name="aspirin">
+   <br/>
+
+   <Label>Codein.</label>
+   Yes<input type="radio" value="yes" name="codeine">
+   No<input type="radio" value="No" name="codeine">
+   <br/>
+
+   <Label>Erythromycin.</label>
+   Yes<input type="radio" value="yes" name="erythromycin">
+   No<input type="radio" value="No" name="erythromycin">
+   <br/>
+
+   <Label>Iodine.</label>
+   Yes<input type="radio" value="yes" name="iodine">
+   No<input type="radio" value="No" name="iodine">
+   <br/>
+
+   <Label>Latex.</label>
+   Yes<input type="radio" value="yes" name="latex">
+   No<input type="radio" value="No" name="latex">
+   <br/>
+
+   <Label>Nitrous oxide.</label>
+   Yes<input type="radio" value="yes" name="nitrousoxide">
+   No<input type="radio" value="No" name="nitrousoxide">
+   <br/>
+
+   <Label>Novocaine.</label>
+   Yes<input type="radio" value="yes" name="novocaine">
+   No<input type="radio" value="No" name="novocaine">
+   <br/>
+
+   <Label>Sulfa drugs.</label>
+   Yes<input type="radio" value="yes" name="sulfadrugs">
+   No<input type="radio" value="No" name="sulfadrugs">
+   <br/>
+
+   <Label>Tetracycline.</label>
+   Yes<input type="radio" value="yes" name="tetracycline">
+   No<input type="radio" value="No" name="tetracycline">
+   <br/>
+
+   <Label>Valium.</label>
+   Yes<input type="radio" value="yes" name="valium">
+   No<input type="radio" value="No" name="valium">
+   <br/>
+
+   <Label>Xylocaine.</label>
+   Yes<input type="radio" value="yes" name="xylocaine">
+   No<input type="radio" value="No" name="xylocaine">
+   <br/>
+
+   <Label>Warfarin.</label>
+   Yes<input type="radio" value="yes" name="warfarin">
+   No<input type="radio" value="No" name="warfarin">
+   <br/>
+
+   <Label>Reaction to general anaesthetic.</label>
+   Yes<input type="radio" value="yes" name="reactiontogeneralanaesthetic">
+   No<input type="radio" value="No" name="reactiontogeneralanaesthetic">
+   <br/>
+<br/>
+   <Label>Others: </label>
+   <textarea name="others" row=3 cols=23 wrap=off></textarea><br/><br/>
+</fieldset>
+
+<fieldset>
+<Legend> Any Medical Problem?</legend><br/>
+
+<Label>Have you ever had any of the following:</Label><br/>
+<br/>
+<Label>Arthiritis or gout.</Label>
+Yes<input type="radio" value="yes" name="arthiritisorgout">
+No<input type="radio" value="No" name="arthiritisorgout">
+<br/>
+
+<Label>Artificial joint .</Label>
+Yes<input type="radio" value="yes" name="artificialjoint">
+No<input type="radio" value="No" name="artificialjoint">
+<br/>
+
+<Label>Asthma .</Label>
+Yes<input type="radio" value="yes" name="asthma">
+No<input type="radio" value="No" name="asthma">
+<br/>
+
+<Label>Allergies.</Label>
+Yes<input type="radio" value="yes" name="allergies">
+No <input type="radio" value="No" name="allergies">
+<br/>
+
+
+<Label>A close relative(parent,sibling,child,
+   grandparent or grandchild)with Creutzfeld Jakob
+   Disease)(CJD).</Label>
+Yes<input type="radio" value="yes" name="cjd">
+No<input type="radio" value="No" name="cjd">
+<br/>
+
+<Label>Bleeding problem or anemia .</Label>
+Yes<input type="radio" value="yes" name="bleedingoranemia">
+No<input type="radio" value="No" name="bleedingoranemia">
+<br/>
+
+<Label>Blood transfusion .</Label>
+Yes<input type="radio" value="yes" name="bloodtransfusion">
+No<input type="radio" value="No" name="bloodtransfusion">
+<br/>
+
+<Label>Bronchitis.</Label>
+Yes<input type="radio" value="yes" name="bronchitis">
+No<input type="radio" value="No" name="bronchitis">
+<br/>
+
+<Label>Blood disease .</Label>
+Yes<input type="radio" value="yes" name="blooddisease">
+No<input type="radio" value="No" name="blooddisease">
+<br/>
+
+<Label>Brain surgery .</Label>
+Yes<input type="radio" value="yes" name="brainsurgery">
+No<input type="radio" value="No" name="brainsurgery">
+<br/>
+
+<Label>Bruise easily .</Label>
+Yes<input type="radio" value="yes" name="bruiseeasily">
+No<input type="radio" value="No" name="bruiseeasily">
+<br/>
+
+<Label>Cancer. </Label>
+Yes<input type="radio" value="yes" name="cancer">
+No<input type="radio" value="No" name="cancer">
+<br/>
+
+<Label>Cold sores.</Label>
+Yes<input type="radio" value="yes" name="coldsores">
+No<input type="radio" value="No" name="coldsores">
+<br/>
+
+<Label>Congenital heart problems.</Label>
+Yes<input type="radio" value="yes" name="heartproblems"> No
+<input type="radio" value="No" name="heartproblems">
+<br/>
+
+<Label>Currently pregnant.</Label>
+Yes<input type="radio" value="yes" name="currentlypregnant"> No
+<input type="radio" value="No" name="currentlypregnant">
+<br/>
+
+<Label>Diabetes.</Label>
+Yes<input type="radio" value="yes" name="diabetes">
+No<input type="radio" value="No" name="diabetes">
+<br/>
+
+<Label>Dizziness or Fainting.</Label>
+Yes<input type="radio" value="yes" name="dizzinessfainting"> No
+<input type="radio" value="No" name="dizzinessfainting">
+<br/>
+
+<Label>Drug or alcohol addiction.</Label>
+Yes<input type="radio" value="yes" name="drugalcoholaddiction"> No
+<input type="radio" value="No" name="drugalcoholaddiction">
+<br/>
+
+<Label>Eating disorder.</Label>
+Yes<input type="radio" value="yes" name="eatingdisorder"> No
+<input type="radio" value="No" name="eatingdisorder">
+<br/>
+
+<Label>Eczema.</Label>
+Yes<input type="radio" value="yes" name="eczema"> No
+<input type="radio" value="No" name="eczema">
+<br/>
+
+<Label>Emphysema.</Label>Yes
+<input type="radio" value="yes" name="emphysema"> No
+<input type="radio" value="No" name="emphysema">
+<br/>
+
+<Label>Epilepsy or seizures.</Label>Yes
+<input type="radio" value="yes" name="epilepsyorseizure"> No
+<input type="radio" value="No" name="epilepsyorseizure">
+<br/>
+
+<Label>Fever Blisters.</Label>Yes
+<input type="radio" value="yes" name="feverblisters"> No
+<input type="radio" value="No" name="feverblisters">
+<br/>
+
+<Label>Frequent thirst. </Label>Yes
+<input type="radio" value="yes" name="frequentthirst"> No
+<input type="radio" value="No" name="frequentthirst">
+<br/>
+
+<Label>Frequent urination .</Label>Yes
+<input type="radio" value="yes" name="frequenturination"> No
+<input type="radio" value="No" name="frequenturination">
+<br/>
+
+<Label>Glaucoma .</Label>Yes
+<input type="radio" value="yes" name="glaucoma"> No
+<input type="radio" value="No" name="glaucoma">
+<br/>
+
+<Label>Growth hormone treatment before 1980's.</Label>
+Yes
+<input type="radio" value="yes" name="growthhormonetreatment"> No
+<input type="radio" value="No" name="growthhormonetreatment">
+<br/>
+
+<Label>HIV-AIDS-ARC .</Label>Yes
+<input type="radio" value="yes" name="HIV_AIDS_ARC"> No
+<input type="radio" value="No" name="HIV_AIDS_ARC">
+<br/>
+
+<Label>Heart attack or stroke. </Label>Yes
+<input type="radio" value="yes" name="heartattackorstroke"> No
+<input type="radio" value="No" name="heartattackorstroke">
+<br/>
+
+<Label>Heart murmur </Label>Yes
+<input type="radio" value="yes" name="heartmurmur"> No
+<input type="radio" value="No" name="heartmurmur">
+<br/>
+
+<Label>Heart trouble</Label> Yes
+<input type="radio" value="yes" name="hearttrouble"> No
+<input type="radio" value="No" name="hearttreouble">
+<br/>
+
+<Label>Heart valve or pace maker.</Label> Yes
+<input type="radio" value="yes" name="heartvalvepacemaker"> No
+<input type="radio" value="No" name="heartvalvepacemaker">
+<br/>
+
+<Label>Hepatitis (A) .</Label>Yes
+<input type="radio" value="yes" name="hepatitisa"> No
+<input type="radio" value="No" name="hepatitisa">
+<br/>
+
+<Label>Hepatitis (B) .</Label>Yes
+<input type="radio" value="yes" name="hepatitisb"> No
+<input type="radio" value="No" name="hepatitisb">
+<br/>
+
+<Label>Hepatitis (C) </Label>Yes
+<input type="radio" value="yes" name="hepatitisc"> No
+<input type="radio" value="No" name="hepatitisc">
+<br/>
+
+<Label>Herpes. </Label>Yes
+<input type="radio" value="yes" name="herpes"> No
+<input type="radio" value="No" name="herpes">
+<br/>
+
+<Label>High blood pressure.</Label> Yes
+<input type="radio" value="yes" name="highbloodpressure"> No
+<input type="radio" value="No" name="highbloodpressure">
+<br/>
+
+<Label>Hypoglycemia. </Label>Yes
+<input type="radio" value="yes" name="hypoglycemia"> No
+<input type="radio" value="No" name="hypoglycemia">
+<br/>
+
+<Label>Hay Fever.</Label> Yes
+<input type="radio" value="yes" name="hayfever"> No
+<input type="radio" value="No" name="hayfever">
+<br/>
+
+<Label>Jaundice .</Label>Yes
+<input type="radio" value="yes" name="jaundice"> No
+<input type="radio" value="No" name="jaundice">
+<br/>
+
+<Label>Jaw joint pain. </Label>Yes
+<input type="radio" value="yes" name="jawjointpain"> No
+<input type="radio" value="No" name="jawjointpain">
+<br/>
+
+<Label>Kidney disease.</Label> Yes
+<input type="radio" value="yes" name="kidneydisease"> No
+<input type="radio" value="No" name="kidneydisease">
+<br/>
+
+<Label>Liver Disease.</Label> Yes
+<input type="radio" value="yes" name="liverdisease"> No
+<input type="radio" value="No" name="liverdisease">
+<br/>
+
+<Label>Low blood pressure .</Label>Yes
+<input type="radio" value="yes" name="lowbloodpressure"> No
+<input type="radio" value="No" name="lowbloodpressure">
+<br/>
+
+<Label>Lung disease.</Label> Yes
+<input type="radio" value="yes" name="lungdisease"> No
+<input type="radio" value="No" name="lungdisease">
+<br/>
+
+<Label>Psychiatric care .</Label>Yes
+<input type="radio" value="yes" name="psychiatricdisease"> No
+<input type="radio" value="No" name="psychiatricdisease">
+<br/>
+
+<Label>Radiation/ Chemotherapy .</Label>
+Yes
+<input type="radio" value="yes" name="radiationchemotherapy"> No
+<input type="radio" value="No" name="radiationchemotherapy">
+<br/>
+
+<Label>Rheumatic Fever or Chorea (St Virus Dance). </Label>
+Yes
+<input type="radio" value="yes" name="rheumaticfeverorchorea"> No
+<input type="radio" value="No" name="rheumaticfeverorchorea">
+<br/>
+
+<Label>Sinus Problems .</Label>Yes
+<input type="radio" value="yes" name="sinusproblems"> No
+<input type="radio" value="No" name="sinusproblems">
+<br/>
+
+<Label>Thyroid problems .</Label>Yes
+<input type="radio" value="yes" name="thyroidproblems"> No
+<input type="radio" value="No" name="thyroidproblems">
+<br/>
+
+<Label>Tuberclosis. </Label>
+Yes
+<input type="radio" value="yes" name="tuberclosis"> No
+<input type="radio" value="No" name="tuberclosis">
+<br/>
+
+<Label>Tumor or Growth.</Label>
+Yes
+<input type="radio" value="yes" name="tumororgrowth"> No
+<input type="radio" value="No" name="tumororgrowth">
+<br/>
+
+<Label>Ulcers or G.I. Problems.</Label>
+Yes
+<input type="radio" value="yes" name="ulcersgiproblems"> No
+<input type="radio" value="No" name="ulcersgiproblems">
+<br/>
+
+<Label>Smoke any of Tobacco products.</Label>
+Yes
+<input type="radio" value="yes" name="smoketobaccoproducts"> No
+<input type="radio" value="No" name="smoketobaccoproducts">
+<br/>
+If yes, how many? times per day
+<input type="text" name="smokehowmanytimesperday">
+<br/>
+
+<Label>Chew any Tobacco products, Pan ,use Ghutkha or Supari.</Label> Yes
+<input type="radio" value="yes" name="chewanytobbaccoproduts"> No
+<input type="radio" value="No" name="chewanytobbaccoproduts">
+<br/>
+If yes, how many? times per day
+<input type="text" name="chewhowmanytimesperday">
+<br/>
+<br/><br/>
+<Label>Any other medical conditions or problems </Label>
+<textarea name="anyothermedicalconditions" row=3 cols=23 wrap=off></textarea><br/>
+<small>anything not listed above that we should know about? please explain in detail.</small>
+<br/><br/>
+</fieldset>
+
+<fieldset>
+   <legend>Any Disability?</legend><br/>
+
+      <div class="introText">Do you have any Disabilities or Impairments:</div><br/>
+
+   <label>Physical disability.</label>Yes
+       <input type="radio" value="yes" name="physicaldisability"> No
+       <input type="radio" value="No" name="physicaldisability">
+      <br/>
+   <br/>
+
+   <label>Details:</label>
+   <textarea name="physicaldisabilitydetails" row=3 cols=23 wrap=off></textarea>
+   <br/>
+   <br/>
+
+   <label>Sensory disability (example hearing,sight).</label> Yes
+       <input type="radio" value="yes" name="sensorydisability"> No
+       <input type="radio" value="No" name="sensorydisability">
+      <br/><br/>
+   <label>Details:</label>
+   <textarea name="sensorydisabilitydetails" row=3 cols=23 wrap=off></textarea>
+   <br/><br/>
+
+   <label>Learning disability.</label>
+    Yes
+       <input type="radio" value="yes" name="learningdisability"> No
+       <input type="radio" value="No" name="learningdisability">
+      <br/><br/>
+      <label>Details:</label>
+   <textarea name="learningdisabilitydetails" row=3 cols=23 wrap=off></textarea>
+   <br/>
+   <br/>
+
+   <label>Mental health problems. </label>Yes
+       <input type="radio" value="yes" name="mentalhealthproblems"> No
+       <input type="radio" value="No" name="mentalhealthproblems"><br/><br/>
+   <label>Details:</label>
+   <textarea name="mentalhealthproblemsdetails" row=3 cols=23 wrap=off></textarea><br/><br/>
+
+</fieldset>
+
+<fieldset>
+
+   <legend> Regular Care :</legend>
+   <br/>
+
+   <div class="introtext"><p>Do you have regular care from other services</div><br/>
+
+   <label>Physiotherapy.</label>
+   Yes<input type="radio" value="yes" name="physiotherapy">
+   No <input type="radio" value="No" name="physiotherapy">
+   <br/><br/>
+
+   <label>Details and name of professional </label>
+   <textarea name="physiotherapyprofdetails" row=3 cols=23 wrap=off></textarea><br/>
+   <br/><br/>
+
+   <label>Speech therapy </label>
+   Yes
+   <input type="radio" value="yes" name="speechtherapy"> No
+   <input type="radio" value="No" name="speechtherapy">
+   <br/><br/>
+
+   <label>Details and name of professional </label>
+   <textarea name="speechtherapydetails" row=3 cols=23 wrap=off></textarea><br/><br/>
+
+   <label>Dietitian </label>
+   Yes
+   <input type="radio" value="yes" name="dietitian">
+   No
+   <input type="radio" value="No" name="dietitian">
+   <br/><br/>
+
+   <label>Details and name of professional:</label>
+   <textarea name="dietitianprofdetails" row=3 cols=23 wrap=off></textarea>
+   <br/><br/>
+
+   <label>Community nurse.</label>
+   Yes
+   <input type="radio" value="yes" name="communitynurse"> No
+   <input type="radio" value="No" name="communitynurse">
+   <br/><br/>
+
+   <label>Details and name of professional:</label>
+   <textarea name="communitynurseprofdetails" row=3 cols=23 wrap=off></textarea><br/> <br/>
+   <br/><br/>
+
+   <label>Other.</label>
+   Yes
+   <input type="radio" value="yes" name="othercare">
+   No
+   <input type="radio" value="No" name="othercare">
+   <br/>
+   <br/>
+
+   <label>Details and name of professional </label>
+   <textarea name="othercaredetails" row=3 cols=23 wrap=off></textarea><br/>
+   <br/>
+   <br/>
+</fieldset>
+<fieldset>
+
+   <Legend>Certifying:(Patient/Parent/Guardian)</Legend>
+   <label>I certify the information is current.</label>
+   Yes
+   <input type="radio" value="yes" name="certifyinformation">
+   No
+   <input type="radio" value="No" name="certifyinformation">
+   <br/><br/>
+
+
+   <input type="submit" name="Submit" value="Send Form Electronically">
+   <input name="Print" type="button" value="Print Form" onClick="window.print();">
+   </fieldset>
+</br>
+</form>

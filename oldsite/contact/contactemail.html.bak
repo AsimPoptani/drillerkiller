@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  
+</head>
+<body>
+   Mail From : $pp.getStringParameter("name", "",  $webContext)
+   <br/>
+   Contact Number: $pp.getStringParameter("contactnumber", "",  $webContext)
+   <br/>
+   Email Id : $pp.getStringParameter("email", "",  $webContext)
+   <br/>
+   Message :  $pp.getStringParameter("message", "",  $webContext)
+</body>
+</html>

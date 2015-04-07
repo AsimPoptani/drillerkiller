@@ -10,6 +10,14 @@
 
         <h2>todo</h2>
 
+        <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>Find Us</li>
+            <li>Book an Appointment</li>
+            <li>The Drillerkiller</li>
+            <li></li>
+        </ul>
 
 
     </div>

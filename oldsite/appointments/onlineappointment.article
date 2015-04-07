@@ -1,0 +1,6 @@
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.content.file=/sites/drillerkiller/appointments/onlineappointment2.html
+asset.content.inline=true
+asset.content.velocity=true
+

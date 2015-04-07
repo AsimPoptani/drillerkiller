@@ -1,0 +1,15 @@
+
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.content.file=/sites/drillerkiller/medhistory/thankyou.html
+asset.content.inline=true
+asset.content.velocity=true
+
+asset.mailfrom.value=donotreply@drillerkiller.com
+asset.mailto.value=pradeep@drillerkiller.com
+asset.mailcc.value=yasin@poptani.com
+asset.mailsubject.value=drillerkiller.com : Medical History
+
+asset.mailbody.file=/sites/drillerkiller/medhistory/thankyouemail.html
+asset.mailbody.inline=true
+asset.mailbody.velocity=true

@@ -1,0 +1,13 @@
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.content.file=/sites/drillerkiller/newpatient/send.html
+asset.content.velocity=true
+asset.content.inline=true
+
+asset.mailbody.value=$formcreator.createOutputText('/sites/base/newpatient/newpatientform.article')
+asset.mailbody.inline=true
+asset.mailbody.velocity=true
+
+asset.mailfrom.value=admin@dental-online.co.uk
+asset.mailto.value=yasin@poptani.com
+asset.mailsubject.value=drillerkiller.com : New Patient Form

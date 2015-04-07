@@ -1,0 +1,9 @@
+
+
+## FCQN of handler class
+handler=uk.co.dentalonline.pagehandler.BaseHandler
+
+layout.container=/sites/base/layout.html
+article=/sites/drillerkiller/base/base.article
+
+log.level=INFO

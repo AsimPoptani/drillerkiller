@@ -1,0 +1,14 @@
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.content.file=/sites/drillerkiller/contact/thankyou.html
+asset.content.inline=true
+asset.content.velocity=false
+
+asset.mailbody.file=/sites/drillerkiller/contact/contactemail.html
+asset.mailbody.inline=true
+asset.mailbody.velocity=true
+
+asset.mailfrom.value=admin@dental-online.co.uk
+asset.mailto.value=pradeep@drillerkiller.com
+asset.mailcc.value=yasin@poptani.com
+asset.mailsubject.value=drillerkiller.com : Contact Email

@@ -1,0 +1,6 @@
+parent.property.value=../base/base.page
+
+# Handler
+handler=uk.co.dentalonline.mail.GenericMailFormHandler
+
+article=/sites/drillerkiller/appointments/thanks.article

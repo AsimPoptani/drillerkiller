@@ -1,0 +1,406 @@
+<style type="text/css">
+<!--
+
+form {  /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+  font:100% verdana,arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  min-width: 500px;
+  max-width: 600px;
+  width: 560px; 
+}
+
+form fieldset {
+  /* clear: both; note that this clear causes inputs to break to left in ie5.x mac, commented out */
+  border-color: #330066;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;        /* padding in fieldset support spotty in IE */
+  margin: 0;
+  margin-bottom:5px;
+}
+
+form fieldset legend {
+	font-size:1.1em; /* bump up legend font size, not too large or it'll overwrite border on left */
+                       /* be careful with padding, it'll shift the nice offset on top of border  */
+   color:#8A821A;
+   font-weight:bold;
+}
+
+form label { 
+	display: block;  /* block float the labels to left column, set a width */
+	float: left; 
+	width: 250px;
+	padding: 0; 
+	margin: 5px 0 0; /* set top margin same as form input - textarea etc. elements */
+	text-align: left;
+}
+
+.centeredlabel
+{
+   text-align:left;
+   font-weight:bold;
+}
+
+
+form input, form textarea, form select {
+	/* display: inline; inline display must not be set or will hide submit buttons in IE 5x mac */
+	width:auto;      /* set width of form elements to auto-size, otherwise watch for wrap on resize */
+	margin:5px 0 0 10px; /* set margin on left of form elements rather than right of
+                              label aligns textarea better in IE */
+}
+
+form input#reset {
+	margin-left:0px; /* set margin-left back to zero on reset button (set above) */
+}
+
+textarea { overflow: auto; }
+
+form small {
+	display: block;
+	margin: 5px 0 5px 255px; /* instructions/comments left margin set to align w/ right column inputs */
+	padding: 1px 3px;
+	font-size: 68%;
+}
+
+form .required{font-weight:bold;} /* uses class instead of div, more efficient */
+
+form br {
+	clear:left; /* setting clear on inputs didn't work consistently, so brs added for degrade */
+}
+-->
+</style>
+
+<script language="Javascript">
+function checkform()
+{
+   var thisform = document.onlineappointment;
+
+   var status = false;
+
+   //check first name
+   if (isValidName(thisform.firstname.value))
+   {
+      status = true;
+   }
+   else
+   {
+      alert("Please enter a valid first name");
+      return false;
+   }
+
+    //check last name
+   if (isValidName(thisform.lastname.value))
+   {
+      status = true;
+   }
+   else
+   {
+      alert("Please enter a valid last name");
+      return false;
+   }
+   // email check
+   if (isValidEmail(thisform.patientemail.value))
+   {
+      status = true;
+   }
+   else
+   {
+      alert("Please enter a valid email address.");
+      return false;
+   }
+
+   //check contact no
+   if (isValidName(thisform.contactnumber.value))
+   {
+      status = true;
+   }
+   else
+   {
+      alert("Please enter a valid contact number.");
+      return false;
+   }
+
+   return status;
+}
+</script>
+
+<form action="thankyou.html" name="onlineappointment">
+   <h2> Online Appointment Request Form</h2>
+
+
+<fieldset>
+<legend>Personal Information</legend>
+	<label for="title">Title: </label>
+	   <select size="1" id="title" name="title">
+		  <option value="Mr" selected >Mr </option>
+		  <option value=" Mrs">Mrs</option>
+		  <option value=" Miss">Miss </option>
+		  <option value=" Mstr" >Master </option>
+		  <option value=" Ms" >Ms </option>
+		</select>
+	<br>
+	<label for="firstname" >First name: </label>
+		<input type="text" id="firstname" name="firstname" tabindex="1" value="" title="first name"><br>
+	<label for="lastname" >Last name: </label>
+		<input type="text" id="lastname" name="lastname" tabindex="2" title="last name">
+  <br/>
+	<label for="" >Date of Birth: </label>
+	<!-- Dob fields go here-->
+   $cms.getDateSelect("/sites/base/dates/days.txt","dobdays")
+   $cms.getDateSelect("/sites/base/dates/months.txt","dobmonths")
+   $cms.getDateSelect("/sites/base/dates/years.txt","dobyears")
+
+   <br/>
+   <small>Date format <b>dd-mm-yyyy</b></small>
+
+
+    <label for="patientemail" >Your Email: </label>
+   		<input type="text" id="patientemail" name="patientemail" tabindex="8"
+			title="patientemail">
+	<br/>
+   <small>Email address is mandatory</small>
+<br/>
+   <label for="contactnumber" >Your Contact No: </label>
+   		<input type="text" id="contactnumber" name="contactnumber" tabindex="9"
+			title="contact number">
+	<br/>
+   <small>Contact number is mandatory</small>
+   <br/>
+</fieldset>
+
+<fieldset>
+   <legend>Appointment Details</legend>
+
+   <label >Private/NHS Treatment</label>
+      <select size="1" name="privatenhs">
+         <option value="Private" selected>Private</option>
+         <option value="NHS">NHS</option>
+      </select>
+      <br/><br/>
+
+   
+  <label for="lastcheckupdays" >Date of last appointment: </label>
+  <!-- Dob fields go here-->
+  $cms.getDateSelect("/sites/base/dates/days.txt","lastcheckupdays") $cms.getDateSelect("/sites/base/dates/months.txt","lastcheckupmonths") 
+  $cms.getDateSelect("/sites/base/dates/years.txt","lastcheckupyears") <br/>
+   <small>Date format <b>dd-mm-yyyy</b></small>
+   <br/>
+
+   <label for="whentobeseen" >When do you wish to be seen: </label>
+      <textarea name="whentobeseen" rows="3" cols="23" id="whentobeseen" tabindex="4" title="whentobeseen"></textarea><br>
+      <small>please give as many available dates/times as possible, since, as a rule we are usually booked out for at least 2 weeks</small>
+<!--<label for="comments" >Comments: </label>-->
+	<!--<textarea name="comments" rows="3" cols="23" id="comments" tabindex="4" title="comments"></textarea><br>-->
+<!--<label for="kludge"></label>-->
+	<!--<input type="submit" value="Send" id="submit" tabindex="5"> <INPUT type="reset" id="reset" tabindex="6">-->
+</fieldset>
+<fieldset>
+   <legend>Health & Current Medication</legend>
+   <label for="areyouinpain">Are you in pain? </label>
+      <select size="1" name="areyouinpain" id="areyouinpain">
+      <option value="No" selected>No</option>
+      <option value="Yes a little">Yes a little</option>
+      <option value=Sporadic>Sporadic </option>
+      <option  value=Moderate>Moderate </option>
+      <option value=Unbearable>Unbearable</option>
+      </select><br/>
+
+   <label for="currenttreatment">Are you currently receiving treatment from a Doctor, Clinic or Specialist ?</label>
+      <textarea name="currenttreatment" rows="3" cols="23" id="currenttreatment"></textarea><br>
+      <small>Please provide as many details as you can.</small>
+
+    <label for="othermedicalconditions">Any other medical conditions or issues we should know about?  Please explain</label>
+      <textarea name="othermedicalconditions" rows="3" cols="23" id="othermedicalconditions"></textarea><br>
+
+    <label for="othersplrequirement">Any special requirement we should know about?</label>
+      <textarea name="othersplrequirement" rows="3" cols="23" id="othersplrequirement"></textarea><br>
+      <small>Please provide as many details as you can.</small>
+
+   <label for="anyotherdetails">Please give any other details your dentist might need to know ,such as self
+    prescribed medicines</label>
+      <textarea name="anyotherdetails" rows="3" cols="23" id="anyotherdetails"></textarea><br>
+      <small>For example Aspirin</small><br/><br/>
+
+   <label for="anyotherdetails">Please list all medications or drugs prescribed to you  </label>
+      <textarea name="allmedicationsanddrugs" rows="3" cols="23" id="allmedicationsanddrugs"></textarea><br/>
+      <small>Examples include tablets, ointments, injections, inhalers, contraceptives and hormone replacement therapy</small><br/><br/>
+
+   <label for="antibiotics">Have you ever been given antibiotics before dental treatment ?</label>
+      <input type="radio" value="yes" name="antibiotics" id="antibiotics">Yes
+      <input type="radio" value="no" name="antibiotics" id="antibiotics">No
+   <br/><br/>
+
+     <label for="recentlyalcohol">Have you recently consumed alcohol ?</label>
+      <input type="radio" value="yes" name="recentlyalcohol" id="recentlyalcohol">Yes
+      <input type="radio" value="no" name="recentlyalcohol" id="recentlyalcohol">No
+   <br/><br/>
+
+  <label>Have you recently used recreational drugs ?</label>
+      <input type="radio" value="yes" name="recdrugs" id="recdrugs">Yes
+      <input type="radio" value="no" name="recdrugs" id="recdrugs">No
+   <br/><br/>
+
+</fieldset>
+<fieldset>
+   <legend>Oral & Dental History</legend>
+
+   <label for="presentdentalconcerns">What are your present dental concerns?</label>
+      <textarea name="presentdentalconcerns" id="presentdentalconcerns" rows="3" cols="23"></textarea><br/><br/>
+
+   <label for="lastdentalvisit">When was your last dental visit</label>
+      <select size="1" name="lastdentalvisit" id="lastdentalvisit">
+      <option value=" 3 months" selected> 3 months ago</option>
+      <option value="3 - 6 months">3 - 6 months ago</option>
+      <option value="6 months - 1 year">6 months -1 year ago</option>
+      <option value="1-2 years">1-2 years ago</option>
+      <option value="2-5 years">2-5 years ago</option>
+      <option value="over 5 years!">over 5 years ago</option>
+     </select><br/><br/>
+
+   <label for="lastdentalxrays">When was your last dental x-rays</label>
+      <select size="1" name="lastdentalxrays" id="lastdentalxrays">
+      <option value=" 3 months" selected> 3 months ago</option>
+      <option value="3 - 6 months">3 - 6 months ago</option>
+      <option value="6 months - 1 year">6 months -1 year ago</option>
+      <option value="1-2 years">1-2 years ago</option>
+      <option value="2-5 years">2-5 years ago</option>
+      <option value="over 5 years!">over 5 years ago</option>
+     </select><br/><br/>
+
+   <label for="lastdentalcleaning">When was your last cleaning</label>
+      <select size="1" name="lastdentalcleaning" id="lastdentalcleaning">
+      <option value=" 3 months" selected> 3 months ago</option>
+      <option value="3 - 6 months">3 - 6 months ago</option>
+      <option value="6 months - 1 year">6 months -1 year ago</option>
+      <option value="1-2 years">1-2 years ago</option>
+      <option value="2-5 years">2-5 years ago</option>
+      <option value="over 5 years!">over 5 years ago</option>
+     </select><br/><br/>
+
+      <label for="avoideddentalcare">Have you recently avoided dental care ?</label>
+         <input type="radio" value="yes" name="avoideddentalcare" id="avoideddentalcare">Yes
+         <input type="radio" value="no" name="avoideddentalcare" id="avoideddentalcare">No
+   <br/><br/>
+
+   <label for="avoideddentalcarewhy">If you answered yes to the above question, please explain why</label>
+      <textarea name="avoideddentalcarewhy" id="avoideddentalcarewhy" rows="3" cols="23"></textarea><br/><br/>
+
+   <label for="activetoothdecay">Do you feel you have active decay ?</label>
+         <input type="radio" value="yes" name="activetoothdecay" id="activetoothdecay">Yes
+         <input type="radio" value="no" name="activetoothdecay" id="activetoothdecay">No
+   <br/><br/>
+
+      <label for="frequentbadbreath">Do you experience frequent bad breath ?</label>
+         <input type="radio" value="yes" name="frequentbadbreath" id="frequentbadbreath">Yes
+         <input type="radio" value="no" name="frequentbadbreath" id="frequentbadbreath">No
+   <br/><br/>
+
+      <label for="gumdisease">Have you ever had a gum disease?</label>
+         <input type="radio" value="yes" name="gumdisease" id="gumdisease">Yes
+         <input type="radio" value="no" name="gumdisease" id="gumdisease">No
+   <br/><br/>
+
+      <label for="avoideddentalcare">Have you ever had gum treatments ?</label>
+         <input type="radio" value="yes" name="gumtreatments" id="gumtreatments">Yes
+         <input type="radio" value="no" name="gumtreatments" id="gumtreatments">No
+   <br/><br/>
+
+     <label for="brushingfrequency">How often do you brush ?</label>
+      <select size="1" name="brushingfrequency" id="brushingfrequency">
+         <option value="Less than a week" selected>Less than a week</option>
+         <option value="Once weekly">Once weekly</option>
+         <option value="Several times weekly">Several times weekly</option>
+         <option value="Once a day">Once a day</option>
+         <option value="Twice a day">Twice a day</option>
+         <option value="Three times a day">Three times a day</option>
+     </select><br/><br/>
+
+    <label for="flossingfrequency">How often do you floss ?</label>
+      <select size="1" name="flossingfrequency" id="flossingfrequency">
+         <option value="Less than a week" selected>Less than a week</option>
+         <option value="Once weekly">Once weekly</option>
+         <option value="Several times weekly">Several times weekly</option>
+         <option value="Once a day">Once a day</option>
+         <option value="Twice a day">Twice a day</option>
+         <option value="Three times a day">Three times a day</option>
+     </select><br/><br/>
+</fieldset>
+
+<fieldset>
+   <legend>Desired Dental Treatment</legend>
+
+    <label for="happywithteeth">Are you happy with the appearance of your teeth ?</label>
+         <input type="radio" value="yes" name="happywithteeth" id="happywithteeth">Yes
+         <input type="radio" value="no" name="happywithteeth" id="happywithteeth">No
+   <br/><br/>
+
+   <label for="wantwhiterteeth">Would you like your teeth to be whiter ?</label>
+         <input type="radio" value="yes" name="wantwhiterteeth" id="wantwhiterteeth">Yes
+         <input type="radio" value="no" name="wantwhiterteeth" id="wantwhiterteeth">No
+   <br/><br/>
+
+   <label for="dentalexpectations">What are your Dental expectations ?</label>
+      <textarea name="dentalexpectations" id="dentalexpectations" rows="3" cols="23"></textarea><br/><br/>
+
+   <div class="centeredlabel">Please tell us which of the following treatments you think you may need</div>
+<br/><br/>
+     <label for="fillingsinmilkteeth">Fillings in Milk Teeth</label>
+         <input type="radio" value="yes" name="fillingsinmilkteeth" id="fillingsinmilkteeth">Yes
+         <input type="radio" value="no" name="fillingsinmilkteeth" id="fillingsinmilkteeth">No
+   <br/><br/>
+
+   <label for="fillingsinadultteeth">Fillings in Adult Teeth</label>
+       <input type="radio" value="yes" name="fillingsinadultteeth" id="fillingsinadultteeth">Yes
+       <input type="radio" value="no" name="fillingsinadultteeth" id="fillingsinadultteeth">No
+   <br/><br/>
+
+   <label for="extractmilkteeth">Extraction of Milk Teeth</label>
+       <input type="radio" value="yes" name="extractmilkteeth" id="extractmilkteeth">Yes
+       <input type="radio" value="no" name="extractmilkteeth" id="extractmilkteeth">No
+   <br/><br/>
+
+   <label for="fillingsinmilkteeth">Extraction of Adult Teeth</label>
+       <input type="radio" value="yes" name="extractadultteeth" id="extractadultteeth">Yes
+       <input type="radio" value="no" name="extractadultteeth" id="extractadultteeth">No
+   <br/><br/>
+
+   <label for="dentures">Dentures</label>
+       <input type="radio" value="yes" name="dentures" id="dentures">Yes
+       <input type="radio" value="no" name="dentures" id="dentures">No
+   <br/><br/>
+
+   <label for="scalepolish">Scale and Polish</label>
+       <input type="radio" value="yes" name="scalepolish" id="scalepolish">Yes
+       <input type="radio" value="no" name="scalepolish" id="scalepolish">No
+   <br/><br/>
+
+   <label for="fissuresealents">Fissure Sealents</label>
+       <input type="radio" value="yes" name="fissuresealents" id="fissuresealents">Yes
+       <input type="radio" value="no" name="fissuresealents" id="fissuresealents">No
+   <br/><br/>
+
+   <label for="orthodontic">Orthodontic Treatment</label>
+       <input type="radio" value="yes" name="orthodontic" id="orthodontic">Yes
+       <input type="radio" value="no" name="orthodontic" id="orthodontic">No
+   <br/><br/>
+
+   <label for="xrays">X-Rays</label>
+       <input type="radio" value="yes" name="xrays" id="xrays">Yes
+       <input type="radio" value="no" name="xrays" id="xrays">No
+   <br/><br/>
+
+   <label for="toothbrushingmouthcare">Toothbrushing/Mouth Care</label>
+       <input type="radio" value="yes" name="toothbrushingmouthcare" id="toothbrushingmouthcare">Yes
+       <input type="radio" value="no" name="toothbrushingmouthcare" id="toothbrushingmouthcare">No
+
+   <br/><br/>
+
+   <label for="othernotesorrequests">Any other notes/requests ?</label>
+        <textarea name="othernotesorrequests" id="othernotesorrequests" rows="3" cols="23"></textarea><br/><br/>
+
+   <input type="submit" value="Request Appointment" name="submit" onclick="return checkform()">
+
+</fieldset>
+</form>
+

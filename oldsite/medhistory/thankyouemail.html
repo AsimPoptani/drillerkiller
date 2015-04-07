@@ -1,0 +1,621 @@
+<html>
+<head>
+   <link href="/cms?direct=/sites/base/styles/simple-base/style.css" rel="stylesheet" type="text/css" media="screen"/>
+   <style media="screen">
+      body {background:url(/cms?direct=/sites/base/styles/simple-aquatic/images/maintop.gif) 0 0 repeat-x #fff;
+         color:#5F7A77; }
+
+      #header .logo{color:#009398;	}
+      #header ul.headermenu li a{color:#305E5C; }
+      #header ul.headermenu li{background : url(/cms?direct=/sites/base/styles/simple-aquatic/images/sep.gif)no-repeat; }
+      #header ul.headermenu li a:hover{color:#FCAF17;}
+
+      #content h2{color:#305E5C; }
+
+
+   </style>
+
+   <link rel="stylesheet" type="text/css" href="/cms?direct=/sites/base/style/simple-base/print.css" media="print" />
+
+</head>
+<body>
+<h3> Medical History</h3>
+
+<fieldset>
+<legend>Patient's Details:</legend>
+   <label>Title: </label>
+      $pp.getStringParameter("Title", "",  $webContext)
+<br/><br/>
+   <label>Firstname: </label>
+    $pp.getStringParameter("emailformfirstname", "",  $webContext)
+<br/><br/>
+
+<label>Surname: </label>
+$pp.getStringParameter("emailFormSurname", "",  $webContext)
+<br/>
+<br/>
+
+ <label>Date of Birth: </label>
+   $pp.getStringParameter("dobdays", "",  $webContext)-$pp.getStringParameter("dobmonths", "",  $webContext)-$pp.getStringParameter("dobyears", "",  $webContext)
+<br/>
+<br/>
+
+<Label>Occupation/School: </label>
+   $pp.getStringParameter("OccupationSchool", "",  $webContext)
+<br/>
+<br/>
+<Label>Address: </label>
+   $pp.getStringParameter("Address", "",  $webContext)
+<br/>
+<br/>
+
+<label>Postcode: </label>
+   $pp.getStringParameter("Postcode", "",  $webContext)
+<br/>
+<br/>
+
+<label>Telephone number: </label>
+   <!--<input type="text" id="Telephonnumber" name="Telephonenumber" tabindex="1" value="" title="Telephone number"><br/>-->
+   $pp.getStringParameter("telephonenumber", "",  $webContext)
+<br/>
+<br/>
+
+<label>Email address: </label>
+   <!--<input type="text" id="emailaddress" name="emailaddress" tabindex="1" value="" title="emailaddress"><br/>-->
+   $pp.getStringParameter("emailaddress", "",  $webContext)
+<br/>
+<br/>
+
+<Label>Hospital No(If Known): </label>
+   <!--<input type="text" id="hospitalno" name="hospitalno" tabindex="1" value="" title="hospitalno"><br/>-->
+   $pp.getStringParameter("hospitalno", "",  $webContext)
+</fieldset>
+
+
+
+<fieldset>
+<legend>Emergency Contacts</legend><br/>
+
+<label>Name Of Next Of Kin :</label>
+   $pp.getStringParameter("nameofnextofkin", "",  $webContext)
+<br/>
+<br/>
+<Label>Relationship:</label>
+   $pp.getStringParameter("relationship", "",  $webContext)
+<br/>
+<br/>
+<Label>Address:</label>
+   $pp.getStringParameter("emergencyaddress", "",  $webContext)
+<br/>
+<br/>
+<Label>Postcode:</label>
+   $pp.getStringParameter("emergencypostcode", "",  $webContext)
+<br/>
+<br/>
+</fieldset>
+
+<fieldset>
+<Legend>Parent/Guardian Details</legend>
+
+<Label>Parent/Guardian Name:</label>
+   $pp.getStringParameter("parentguardianname", "",  $webContext)
+<br/>
+<br/>
+<Label>Address:</label>
+   $pp.getStringParameter("parentguardianaddress", "",  $webContext)
+<br/>
+<br/>
+<Label>Postcode:</label>
+   $pp.getStringParameter("parentguardianpostcode", "",  $webContext)
+<br/>
+<br/>
+<Label>Daytime Telephone number:</label>
+   $pp.getStringParameter("parentguardiandaytimetelephone", "",  $webContext)
+<br/>
+<br/>
+</fieldset>
+<fieldset>
+
+<legend>GP'S Details:</legend>
+
+<Label>GP's Name:</label>
+   $pp.getStringParameter("gpname", "",  $webContext)
+<br/>
+<br/>
+<Label>GP's Telephone Number:</label>
+   $pp.getStringParameter("gptelephonenumber", "",  $webContext)
+<br/>
+<br/>
+<Label>GP's Address:</label>
+   $pp.getStringParameter("gpaddress", "",  $webContext)
+<br/>
+<br/>
+<Label>GP's Postcode:</label>
+   $pp.getStringParameter("gppostcode", "",  $webContext)
+<br/>
+<br/>
+</fieldset>
+
+<fieldset>
+<Legend>Your Health:</legend>
+
+<label>How would you describe your overall health?</label>
+   $pp.getStringParameter("overallhealth", "",  $webContext)
+   <br/>
+   <br/>
+
+<Label>When was your last checkup?</label>
+$pp.getStringParameter("lastcheckupdays", "",  $webContext)-$pp.getStringParameter("lastcheckupmonths", "",  $webContext)-$pp.getStringParameter("lastcheckupyears", "",  $webContext)
+   <br/>
+   <br/>
+
+
+<Label>Have you been hospitalized in the last two years?</label>
+   $pp.getStringParameter("hospitalizedinthelasttwoyears", "",  $webContext)
+   <br/>
+   <br/>
+
+<label>Name of Hospital?</label>
+ $pp.getStringParameter("nameofhospital", "",  $webContext)
+   <br/>
+   <br/>
+
+<label>If so Why?</label>
+  $pp.getStringParameter("whyhospitalised", "",  $webContext)
+   <br/>
+   <br/>
+
+<Label>Are you currently receiving treatment from a doctor,clinic or Specialist?</Label>
+   $pp.getStringParameter("receivingtreatment", "",  $webContext)
+   <br/>
+   <br/>
+
+<label>Any special requirements we should know about?</label>
+   $pp.getStringParameter("specialrequirements", "",  $webContext)
+   <br/>
+   <br/>
+
+</fieldset>
+
+<fieldset>
+
+<legend>Medications</legend>
+  <Label>Please list all medications or drugs prescribed you are taking: </label>
+      $pp.getStringParameter("listallmedications", "",  $webContext)
+<br/>
+   <br/>
+  <label>Please give any other details your dentist might need to know,such as self
+  prescribed medicines: </label>
+      $pp.getStringParameter("selfprescribedmedicines", "",  $webContext)
+<br/>
+   <br/>
+</fieldset>
+
+<fieldset>
+
+<legend>Allergies: </legend><br/>
+<Label>Have you ever had an adverse reaction or allergies to any
+    medication or substance? </label><br/>
+<br/>
+<br/>
+<Label>Penicilin: </label>
+$pp.getStringParameter("penicilin", "",  $webContext)
+<br/>
+<br/>
+
+<label>Aspirin: </label>
+$pp.getStringParameter("aspirin", "",  $webContext)
+<br/>
+<br/>
+<Label>Codein: </label>
+$pp.getStringParameter("codeine", "",  $webContext)
+<br/>
+<br/>
+<Label>Erythromycin: </label>
+$pp.getStringParameter("erythromycin", "",  $webContext)
+<br/>
+<br/>
+<Label>Iodine: </label>
+$pp.getStringParameter("iodine", "",  $webContext)
+<br/>
+<br/>
+<Label>Latex: </label>
+$pp.getStringParameter("latex", "",  $webContext)
+<br/>
+<br/>
+<Label>Nitrous oxide: </label>
+$pp.getStringParameter("nitrousoxide", "",  $webContext)
+<br/>
+<br/>
+<Label>Novocaine: </label>
+$pp.getStringParameter("novocaine", "",  $webContext)
+<br/>
+<br/>
+<Label>Sulfa drugs: </label>
+$pp.getStringParameter("sulfadrugs", "",  $webContext)
+<br/>
+<br/>
+<Label>Tetracycline: </label>
+$pp.getStringParameter("tetracycline", "",  $webContext)
+<br/>
+<br/>
+<Label>Valium: </label>
+$pp.getStringParameter("valium", "",  $webContext)
+<br/>
+<br/>
+<Label>Xylocaine: </label>
+$pp.getStringParameter("xylocaine", "",  $webContext)
+<br/>
+<br/>
+<Label>Warfarin: </label>
+$pp.getStringParameter("warfarin", "",  $webContext)
+<br/>
+<br/>
+<Label>Reaction to general anaesthetic: </label>
+$pp.getStringParameter("reactiontogeneralanaesthetic", "",  $webContext)
+<br/>
+<br/>
+<Label>Others: </label>
+$pp.getStringParameter("others", "",  $webContext)
+<br/>
+<br/>
+</fieldset>
+
+<fieldset>
+<Legend> Any Medical Problem?</legend><br/>
+<Label>Have you ever had any of the following:</Label>
+<br/><br/>
+
+<Label>Arthiritis or gout </Label>
+$pp.getStringParameter("arthiritisorgout", "",  $webContext)
+<br/><br/>
+
+<Label>Artificial joint </Label>
+$pp.getStringParameter("artificialjoint", "",  $webContext)
+<br/><br/>
+
+<Label>Asthma </Label>
+$pp.getStringParameter("asthma", "",  $webContext)
+<br/><br/>
+
+<Label>Allergies </Label>
+$pp.getStringParameter("allergies", "",  $webContext)
+<br/><br/>
+
+
+<Label>A close relative(parent,sibling,child,
+grandparent or grandchild)with Creutzfeld Jakob
+Disease)(CJD)  </Label>
+$pp.getStringParameter("cjd", "",  $webContext)
+<br/><br/>
+
+<Label>Bleeding problem or anemia </Label>
+$pp.getStringParameter("bleedingoranemia", "",  $webContext)
+<br/><br/>
+
+<Label>Blood transfusion </Label>
+$pp.getStringParameter("bloodtransfusion", "",  $webContext)
+<br/><br/>
+
+<Label>Bronchitis </Label>
+$pp.getStringParameter("bronchitis", "",  $webContext)
+<br/><br/>
+
+<Label>Blood disease </Label>
+$pp.getStringParameter("blooddisease", "",  $webContext)
+<br/><br/>
+
+<Label>Brain surgery </Label>
+$pp.getStringParameter("brainsurgery", "",  $webContext)
+<br/><br/>
+
+<Label>Bruise easily </Label>
+$pp.getStringParameter("bruiseeasily", "",  $webContext)
+<br/><br/>
+
+<Label>Cancer </Label>
+$pp.getStringParameter("cancer", "",  $webContext)
+<br/><br/>
+
+<Label>Cold sores </Label>
+$pp.getStringParameter("coldsores", "",  $webContext)
+<br/><br/>
+
+<Label>Congenital heart problems </Label>
+$pp.getStringParameter("heartproblems", "",  $webContext)
+<br/><br/>
+
+<Label>Currently pregnant </Label>
+$pp.getStringParameter("currentlypregnant", "",  $webContext)
+<br/><br/>
+
+<Label>Diabetes </Label>
+$pp.getStringParameter("diabetes", "",  $webContext)
+<br/><br/>
+
+<Label>Dizziness or Fainting </Label>
+$pp.getStringParameter("dizzinessfainting", "",  $webContext)
+<br/><br/>
+
+<Label>Drug or alcohol addiction </Label>
+$pp.getStringParameter("drugalcoholaddiction", "",  $webContext)
+<br/><br/>
+
+<Label>Eating disorder </Label>
+$pp.getStringParameter("eatingdisorder", "",  $webContext)
+<br/><br/>
+
+<Label>Eczema </Label>
+$pp.getStringParameter("eczema", "",  $webContext)
+<br/><br/>
+
+<Label>Emphysema </Label>
+$pp.getStringParameter("emphysema", "",  $webContext)
+<br/><br/>
+
+<Label>Epilepsy or seizures </Label>
+$pp.getStringParameter("epilepsyorseizure", "",  $webContext)
+<br/><br/>
+
+
+<Label>Fever Blisters </Label>
+$pp.getStringParameter("feverblisters", "",  $webContext)
+<br/><br/>
+
+<Label>Frequent thirst  </Label>
+$pp.getStringParameter("frequentthirst", "",  $webContext)
+<br/><br/>
+
+<Label>Frequent urination </Label>
+$pp.getStringParameter("frequenturination", "",  $webContext)
+<br/><br/>
+
+<Label>Glaucoma </Label>
+$pp.getStringParameter("glaucoma", "",  $webContext)
+<br/><br/>
+
+<Label>Growth hormone treatment before 1980's </Label>
+$pp.getStringParameter("growthhormonetreatment", "",  $webContext)
+<br/><br/>
+
+<Label>HIV-AIDS-ARC </Label>
+$pp.getStringParameter("HIV_AIDS_ARC", "",  $webContext)
+<br/><br/>
+
+<Label>Heart attack or stroke </Label>
+$pp.getStringParameter("heartattackorstroke", "",  $webContext)
+<br/><br/>
+
+<Label>Heart murmur </Label>
+$pp.getStringParameter("heartmurmur", "",  $webContext)
+<br/><br/>
+
+
+<Label>Heart trouble</Label>
+$pp.getStringParameter("hearttrouble", "",  $webContext)
+<br/><br/>
+
+<Label>Heart valve or pace maker </Label>
+$pp.getStringParameter("heartvalvepacemaker", "",  $webContext)
+<br/><br/>
+
+
+<Label>Hepatitis (A) </Label>
+$pp.getStringParameter("hepatitisa", "",  $webContext)
+<br/><br/>
+
+<Label>Hepatitis (B) </Label>
+$pp.getStringParameter("hepatitisb", "",  $webContext)
+<br/><br/>
+
+
+<Label>Hepatitis (C) </Label>
+$pp.getStringParameter("hepatitisc", "",  $webContext)
+<br/><br/>
+
+
+<Label>Herpes </Label>
+$pp.getStringParameter("herpes", "",  $webContext)
+<br/><br/>
+
+
+<Label>High blood pressure </Label>
+$pp.getStringParameter("highbloodpressure", "",  $webContext)
+<br/><br/>
+
+
+<Label>Hypoglycemia </Label>
+$pp.getStringParameter("hypoglycemia", "",  $webContext)
+<br/><br/>
+
+<Label>Hay Fever </Label>
+$pp.getStringParameter("hayfever", "",  $webContext)
+<br/><br/>
+
+
+<Label>Jaundice </Label>
+$pp.getStringParameter("jaundice", "",  $webContext)
+<br/><br/>
+
+
+<Label>Jaw joint pain </Label>
+$pp.getStringParameter("jawjointpain", "",  $webContext)
+<br/><br/>
+
+<Label>Kidney disease </Label>
+$pp.getStringParameter("kidneydisease", "",  $webContext)
+<br/><br/>
+
+
+<Label>Liver Disease </Label>
+$pp.getStringParameter("liverdisease", "",  $webContext)
+<br/><br/>
+
+
+<Label>Low blood pressure </Label>
+$pp.getStringParameter("lowbloodpressure", "",  $webContext)
+<br/><br/>
+
+
+<Label>Lung disease </Label>
+$pp.getStringParameter("lungdisease", "",  $webContext)
+<br/><br/>
+
+
+<Label>Psychiatric care </Label>
+$pp.getStringParameter("psychiatricdisease", "",  $webContext)
+<br/><br/>
+
+
+<Label>Radiation/ Chemotherapy </Label>
+$pp.getStringParameter("radiationchemotherapy", "",  $webContext)
+<br/><br/>
+
+<Label>Rheumatic Fever or Chorea (St Virus Dance) </Label>
+$pp.getStringParameter("rheumaticfeverorchorea", "",  $webContext)
+<br/><br/>
+
+<Label>Sinus Problems </Label>$pp.getStringParameter("sinusproblems", "",  $webContext)
+<br/><br/>
+
+
+<Label>Thyroid problems </Label>
+$pp.getStringParameter("thyroidproblems", "",  $webContext)
+<br/><br/>
+
+
+<Label>Tuberclosis </Label>
+$pp.getStringParameter("tuberclosis", "",  $webContext)
+<br/><br/>
+
+<Label>Tumor or Growth </Label>
+$pp.getStringParameter("tumororgrowth", "",  $webContext)
+<br/><br/>
+
+<Label>Ulcers or G.I. Problems </Label>
+$pp.getStringParameter("ulcersgiproblems", "",  $webContext)
+<br/><br/>
+
+<Label>Smoke any of Tobacco products </Label>
+$pp.getStringParameter("smoketobaccoproducts", "",  $webContext)
+<br/><br/>
+
+<Label>If so, how many times per day? </Label>
+$pp.getStringParameter("smokehowmanytimesperday", "",  $webContext)
+<br/><br/>
+
+
+<Label>Chew any Tobacco products, Pan ,use Ghutkha or Supari </Label>
+$pp.getStringParameter("chewanytobbaccoproduts", "",  $webContext)
+<br/><br/>
+
+<Label>If so, how many times per day? </Label>
+$pp.getStringParameter("chewhowmanytimesperday", "",  $webContext)
+<br/><br/>
+
+
+<Label>Any other medical conditions or problems not listed above that we should
+know about? Please explain </Label>
+
+$pp.getStringParameter("anyothermedicalconditions", "",  $webContext)
+<br/><br/>
+</fieldset>
+
+<fieldset>
+
+   <legend>Any Disability?</legend><br/>
+
+  <div class="introText"><p>Do you have any Disabilities or Impairments:</div><br/>
+
+<label>Physical disability </label>
+   $pp.getStringParameter("physicaldisability", "",  $webContext)
+   <br/>
+<br/>
+
+<label>Details </label>
+$pp.getStringParameter("physicaldisabilitydetails", "",  $webContext)
+   <br/>
+<br/>
+
+<label>Sensory disability (example hearing,sight) </label>
+   $pp.getStringParameter("sensorydisability", "",  $webContext)
+   <br/><br/>
+<label>Details </label>
+$pp.getStringParameter("sensorydisabilitydetails", "",  $webContext)
+   <br/><br/>
+
+<label>Learning disability </label>
+ $pp.getStringParameter("learningdisability", "",  $webContext)
+ 	<br/><br/>
+	<label>Details </label>
+   $pp.getStringParameter("learningdisabilitydetails", "",  $webContext)
+<br/>
+<br/>
+
+<label>Mental health problems </label>
+   $pp.getStringParameter("mentalhealthproblems", "",  $webContext)
+   <br/><br/>
+<label>Details </label>
+$pp.getStringParameter("mentalhealthproblemsdetails", "",  $webContext)
+   <br/><br/>
+
+</fieldset>
+
+<fieldset>
+
+<legend> Regular Care :</legend>
+<br/><div class="introtext"><p>Do you have regular care from other services</div><br/>
+
+<label>Physiotherapy </label>
+$pp.getStringParameter("physiotherapy", "",  $webContext)
+   <br/><br/>
+
+   <label>Details and name of professional </label>
+   $pp.getStringParameter("physiotherapyprofdetails", "",  $webContext)
+<br/><br/>
+
+<label>Speech therapy </label>
+   $pp.getStringParameter("speechtherapy", "",  $webContext)
+   <br/><br/>
+
+   <label>Details and name of professional </label>
+$pp.getStringParameter("speechtherapydetails", "",  $webContext)
+   <br/><br/>
+
+   <label>Dietitian </label>
+   $pp.getStringParameter("dietitian", "",  $webContext)
+   <br/><br/>
+
+   <label>Details and name of professional </label>
+$pp.getStringParameter("dietitianprofdetails", "",  $webContext)
+   <br/><br/>
+
+   <label>Community nurse </label>
+   $pp.getStringParameter("communitynurse", "",  $webContext)
+   <br/><br/>
+
+   <label>Details and name of professional </label>
+$pp.getStringParameter("communitynurseprofdetails", "",  $webContext)
+   <br/><br/>
+
+   <label>Other </label>
+   $pp.getStringParameter("othercare", "",  $webContext)
+   <br/><br/>
+
+   <label>Details and name of professional </label><br/>
+   $pp.getStringParameter("othercaredetails", "",  $webContext)
+   <br/><br/>
+
+</fieldset>
+
+<fieldset>
+
+<Legend>Certifying:(Patient/Parent/Guardian)</Legend>
+<label>I certify the information is current.</label>
+ $pp.getStringParameter("certifyinformation", "",  $webContext)
+   <br/><br/>
+
+   </fieldset>
+
+</body>
+</html>

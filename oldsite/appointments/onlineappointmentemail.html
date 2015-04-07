@@ -1,0 +1,202 @@
+<h2 align="left"> Online Appointment Request </h2>
+
+<p align="left">Title:
+$pp.getStringParameter("title", "",  $webContext)
+</p>
+
+<p align="left">Firstname: &nbsp; $pp.getStringParameter("firstname", "",  $webContext)</p>
+
+<p align="left">Surname :&nbsp; $pp.getStringParameter("lastname", "",  $webContext)</p>
+
+<p align="left">
+   Date of Birth: &nbsp; $pp.getStringParameter("dobdays", "",  $webContext)-$pp.getStringParameter("dobmonths", "",  $webContext)-$pp.getStringParameter("dobyears", "",  $webContext)
+</p>
+
+
+
+<p align="left">
+   Email Id: &nbsp; $pp.getStringParameter("patientemail", "",  $webContext)
+</p>
+
+<p align="left">
+   Contact No: &nbsp; $pp.getStringParameter("contactnumber", "",  $webContext)
+</p>
+
+<p align="left">Private/NHS: &nbsp; $pp.getStringParameter("privatenhs", "",  $webContext)</p>
+
+<p align="left">
+   Date of last checkup: &nbsp; $pp.getStringParameter("lastcheckupdays", "",  $webContext)-$pp.getStringParameter("lastcheckupmonths", "",  $webContext)-$pp.getStringParameter("lastcheckupyears", "",  $webContext)
+</p>
+
+<p align="left">When would you like to be seen:&nbsp; $pp.getStringParameter("whentobeseen", "",  $webContext) </p>
+
+<p align="left"></p>
+<p align="left">Are you in pain?&nbsp; $pp.getStringParameter("areyouinpain", "",  $webContext)</p>
+
+<p align="left">Are you currently receiving treatment from
+   a Doctor, Clinic or Specialist? &nbsp; $pp.getStringParameter("currenttreatment", "",  $webContext) </p>
+
+<p align="left">Any other medical conditions or
+   problems we should know about? Please explain&nbsp; $pp.getStringParameter("othermedicalconditions", "",  $webContext) </p>
+
+<p align="left">Any special requirement we should know
+   about? &nbsp; $pp.getStringParameter("othersplrequirement", "",  $webContext)</p>
+
+<!-- Radio buttons-->
+<p align="left"> Have you ever been given antibiotics before dental treatment?&nbsp;&nbsp;
+   $pp.getStringParameter("antibiotics", "",  $webContext)</p>
+
+
+<p align="left"> Have you recently consumed alcohol?&nbsp;&nbsp;
+   $pp.getStringParameter("recentlyalcohol", "",  $webContext)</p>
+
+<p align="left"> Have you recently used recreational drugs? &nbsp;&nbsp;
+   $pp.getStringParameter("recdrugs", "",  $webContext)</p>
+
+
+<p align="left">What are your present&nbsp; dental
+   concerns?&nbsp;&nbsp;
+$pp.getStringParameter("presentdentalconcerns", "",  $webContext)
+</p>
+
+<p align="left">When was your last dental visit?&nbsp;&nbsp;
+   $pp.getStringParameter("lastdentalvisit", "",  $webContext)
+</p>
+
+<p align="left">When were your last dental x-rays?&nbsp;&nbsp;
+   $pp.getStringParameter("lastdentalxrays", "",  $webContext)
+
+<p align="left"> When was your last cleaning?&nbsp;&nbsp;
+$pp.getStringParameter("lastdentalcleaning", "",  $webContext)
+</p>
+
+<p align="left">Have  you avoided regular dental care?&nbsp;&nbsp;
+$pp.getStringParameter("avoideddentalcare", "",  $webContext)
+</p>
+<p align="left">Why?
+$pp.getStringParameter("avoideddentalcarewhy", "",  $webContext)
+</p>
+      
+<p align="left">
+   Do you experience frequent bad breath?&nbsp; &nbsp;
+$pp.getStringParameter("activetoothdecay", "",  $webContext)
+</p>
+
+<p align="left">
+   Do you&nbsp; feel you have active decay?&nbsp; &nbsp;
+$pp.getStringParameter("frequentbadbreath", "",  $webContext)
+</p>
+
+<p align="left">
+    Do you have gum disease?&nbsp; &nbsp;
+$pp.getStringParameter("gumdisease", "",  $webContext)
+</p>
+
+<p align="left">
+    Have you ever had gum treatments?&nbsp; &nbsp;
+$pp.getStringParameter("gumtreatments", "",  $webContext)
+</p>
+
+<p align="left">
+    How often you brush?&nbsp; &nbsp;
+$pp.getStringParameter("brushingfrequency", "",  $webContext)
+</p>
+
+<p align="left">
+    How often you Floss?&nbsp; &nbsp;
+$pp.getStringParameter("flossingfrequency", "",  $webContext)
+</p>
+
+<p align="left">
+    Are you happy with the appearance of your teeth?&nbsp; &nbsp;
+$pp.getStringParameter("happywithteeth", "",  $webContext)
+</p>
+
+
+<p align="left">
+    Would you like your teeth to be whiter? &nbsp; &nbsp;
+$pp.getStringParameter("wantwhiterteeth", "",  $webContext)
+</p>
+
+<p align="left">
+    What are your Dental expectations? &nbsp; &nbsp;
+$pp.getStringParameter("dentalexpectations", "",  $webContext)
+</p>
+
+<p align="left">
+    Please give any other details your dentist might need to know ,such as self
+   prescribed medicines(example Aspirin)&nbsp;&nbsp;</p>
+<p align="left">
+$pp.getStringParameter("anyotherdetails", "",  $webContext)
+</p>
+
+<p align="left">Please list all medications or drugs
+   prescribed you are taking(example
+   tablets,ointments,injections,inhalers,contraceptives and hormone
+   replacement therapy)
+</p>
+<p align="left">
+   $pp.getStringParameter("allmedicationsanddrugs", "",  $webContext)
+</p>
+
+<p align="left"></p>
+<p align="left"></p>
+
+<p align="left">Please tell us what treatment you think you may need:&nbsp; &nbsp;
+
+   <p align="left">
+      &nbsp;Fillings in Milk Teeth:&nbsp; &nbsp;
+      $pp.getStringParameter("fillingsinmilkteeth", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Fillings in Adult Teeth:&nbsp; &nbsp;
+      $pp.getStringParameter("fillingsinadultteeth", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Extraction of Milk Teeth:&nbsp; &nbsp;
+      $pp.getStringParameter("extractmilkteeth", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Extraction of Adult Teeth:&nbsp; &nbsp;
+      $pp.getStringParameter("extractadultteeth", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Dentures:&nbsp; &nbsp;
+      $pp.getStringParameter("dentures", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Scale and Polish:&nbsp; &nbsp;
+      $pp.getStringParameter("scalepolish", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Fissure Sealents:&nbsp; &nbsp;
+      $pp.getStringParameter("fissuresealents", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Orthodontic Treatment (brace work):&nbsp; &nbsp;
+      $pp.getStringParameter("orthodontic", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;X-Rays:&nbsp; &nbsp;
+      $pp.getStringParameter("xrays", "",  $webContext)
+   </p>
+
+   <p align="left">
+      &nbsp;Toothbrushing/Mouth Care:&nbsp; &nbsp;
+      $pp.getStringParameter("toothbrushingmouthcare", "",  $webContext)
+   </p>
+</p>
+
+<p align="left"> Any other notes/requests?</p>
+<p align="left">
+   $pp.getStringParameter("othernotesorrequests", "",  $webContext)
+</p>
+

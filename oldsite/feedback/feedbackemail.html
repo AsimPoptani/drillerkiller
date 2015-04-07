@@ -1,0 +1,34 @@
+<html>
+<head>
+   <link href="/cms?direct=/sites/base/styles/simple-base/style.css" rel="stylesheet" type="text/css" media="screen"/>
+   <style media="screen">
+      body {background:url(/cms?direct=/sites/base/styles/simple-aquatic/images/maintop.gif) 0 0 repeat-x #fff;
+         color:#5F7A77; }
+
+      #header .logo{color:#009398;	}
+      #header ul.headermenu li a{color:#305E5C; }
+      #header ul.headermenu li{background : url(/cms?direct=/sites/base/styles/simple-aquatic/images/sep.gif)no-repeat; }
+      #header ul.headermenu li a:hover{color:#FCAF17;}
+
+      #content h2{color:#305E5C; }
+
+
+   </style>
+
+   <link rel="stylesheet" type="text/css" href="/cms?direct=/sites/base/style/simple-base/print.css" media="print" />
+
+</head>
+<body>
+   <h2>User Feedback</h2>
+
+   <p>Your Name : $pp.getStringParameter("name", "",  $webContext) </p>
+
+   <p>Email : $pp.getStringParameter("email", "",  $webContext) </p>
+
+   <p>Feedback : <br>
+      $pp.getStringParameter("feedback", "",  $webContext)
+
+   </p>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+parent.property.value=../base/base.page
+
+handler=uk.co.dentalonline.mail.GenericMailFormHandler
+
+article=/sites/drillerkiller/newpatient/send.article
+
+folders.value=/sites/drillerkiller/newpatient/email.folder
+
+log.level=DEBUG
+

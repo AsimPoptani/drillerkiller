@@ -1,0 +1,38 @@
+parent.property.value=/sites/base/mailbase.article
+asset.title.value=Harrow View Dental Surgery
+
+asset.meta_keywords.value=dental, surgery, dentist, treatment, cosmetic dentistry, private dentistry, private dentist, dental, clinic, harrow dental clinic, dental clinic, middlesex, harrow dentist, harrow dental, private dental, cosmetic dentist, cosmetic dental, harrow dentist, dentist harrow, dentist harrow, harrow dental, dental harrow, dental harrow, dental practice, dental care, dental fees, dental prices, dentist fees, dentist prices, cerec, invisalign, harrow teeth whitening, harrow teeth whitening, harrow tooth whitening, harrow veneer, harrow veneers, harrow dentists, dentist in harrow, dentists in harrow, harrow invisalign, harrow orthodontist, harrow tooth whitening, harrow veneer, harrow veneers, harrow dentists, dentist in harrow, Anxiety Management, Accupuncture, Bridgework, Amalgam, Whitefillings, Whitening, Chrome Dentures, Acrylic Dentures, Pain relief, Prevention, Gum treatment, Oral Screening, Endodontics, Extractions
+asset.meta_description.value=Harrow View Dental Surgery. Our dental team provides dentistry in a relaxed setting offering a wide range of treatments in addition to regular preventative treatment. We cater for the entire family and offer a specialist service for those who are very nervous of treatment.
+asset.meta_author.value=Dental Online
+
+
+asset.header.file=/sites/drillerkiller/base/header.html
+asset.header.velocity=true
+asset.header.inline=true
+
+asset.menu.file=/sites/drillerkiller/base/menu.html
+asset.menu.velocity=true
+asset.menu.inline=true
+
+asset.jsfile.file=/main/validations/formvalidation.js
+#asset.jsfile.inline=true
+
+
+asset.content.value=No Content Specified
+asset.content.velocity=false
+asset.content.inline=true
+
+
+asset.footer.file=/sites/drillerkiller/base/footer.html
+asset.footer.velocity=true
+asset.footer.inline=true
+
+
+asset.color.file=/sites/base/styles/simple-green/style.css
+asset.color.velocity=true
+asset.color.inline=true
+
+# Ameya please fix multi level inhertance in page
+asset.html-header.value=<!-- Asset for putting the page specific html header (ex - java script for specific page) -->
+asset.init-body.value=
+

@@ -1,0 +1,6 @@
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.content.file=/sites/drillerkiller/home/content.html
+asset.content.velocity=true
+asset.content.inline=true
+ 

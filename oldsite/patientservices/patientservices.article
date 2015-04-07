@@ -1,0 +1,4 @@
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.content.file=/sites/drillerkiller/patientservices/patientservices.html
+asset.content.inline=true

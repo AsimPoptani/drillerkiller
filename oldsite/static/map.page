@@ -1,0 +1,5 @@
+parent.property.value=../base/base.page
+
+article=/sites/drillerkiller/static/map.article
+
+folders.value=popup.folder

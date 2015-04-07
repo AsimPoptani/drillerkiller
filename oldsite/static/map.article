@@ -1,0 +1,30 @@
+parent.property.value=/sites/drillerkiller/base/base.article
+
+asset.html-header.file=/sites/base/map/map.js
+asset.html-header.velocity=true
+asset.html-header.inline=true
+
+asset.init-body.value=onload="load()" onunload="GUnload()"
+
+
+asset.content.file=/sites/base/map/map.html
+#asset.content.velocity=true
+asset.content.inline=true
+
+# Address
+asset.house.value=77
+asset.street.value=Harrow View
+asset.area.value=Harrow
+asset.city.value=Middlesex
+asset.postcode.value=HA1 4TA
+asset.lat.value=51.587489
+asset.lan.value=-0.342799
+
+# to show extra pop up tabs
+# enabe this and add folder.value in .page
+asset.morepopup.value=true
+
+#google keys
+asset.www.dental-online.co.uk.value=ABQIAAAA-1tbch8ugsq4zs-zzYEFRBTXyi0WFmgM_5iubtExhnQsB5n3EhRx19U4cRKfad3h1JlbHZvbOlEWLQ
+asset.localhost.value=ABQIAAAA-1tbch8ugsq4zs-zzYEFRBTwM0brOpm-All5BF6PoaKBxRWWERQWwO1oSF8osCg_RrYgCMy3yH2KZw
+asset.www.drillerkiller.com.value=ABQIAAAA-1tbch8ugsq4zs-zzYEFRBRh7EU2XfOHHSi4EQZ0dQrW9fH0ahS8GuYaJg7qUEG2Jva-UaFdmaqU0w

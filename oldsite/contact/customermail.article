@@ -1,0 +1,13 @@
+asset.mailfrom.value=admin@dental-online.co.uk
+
+asset.mailto.value=$pp.getStringParameter("customeremail", "",  $webContext)
+asset.mailto.velocity=true
+
+asset.mailsubject.value=Thanks for contacting us!
+
+
+asset.mailbody.file=/sites/drillerkiller/contact/customeremail.html
+asset.mailbody.inline=true
+asset.mailbody.velocity=true
+
+asset.mailarticle.value=true
