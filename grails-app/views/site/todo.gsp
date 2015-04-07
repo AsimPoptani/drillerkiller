@@ -15,8 +15,12 @@
             <li>Contact</li>
             <li>Find Us</li>
             <li>Book an Appointment</li>
+            <li>Surgery Hours</li>
+            <li>Feedback</li>
+            <li>Practice Policy</li>
+            <li>Our Services</li>
             <li>The Drillerkiller</li>
-            <li></li>
+            <li>Invasion of the frogs</li>
         </ul>
 
 
